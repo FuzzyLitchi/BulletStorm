@@ -41,7 +41,7 @@ function Player:make(x, y, state)
 
     for i, v in ipairs(agents) do
       if Collision:touching(self, v) then
-        state:set("game")
+        state:end_game(self.points)
         break
       end
     end
