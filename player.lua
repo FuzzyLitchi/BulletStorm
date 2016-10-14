@@ -19,15 +19,15 @@ function player:update(dt, agents)
 
   self.points = self.points + math.sqrt(self.velX^2 + self.velY^2) / (35E4 * dt)
 
-  if love.keyboard.isDown("w") then
+  if love.keyboard.isDown("w") or love.keyboard.isDown("up") then
     self.velY = self.velY - self.acceleration * dt
-  elseif love.keyboard.isDown("s") then
+  elseif love.keyboard.isDown("s") or love.keyboard.isDown("down") then
     self.velY = self.velY + self.acceleration * dt
   end
 
-  if love.keyboard.isDown("a") then
+  if love.keyboard.isDown("a") or love.keyboard.isDown("left") then
     self.velX = self.velX - self.acceleration * dt
-  elseif love.keyboard.isDown("d") then
+  elseif love.keyboard.isDown("d") or love.keyboard.isDown("right") then
     self.velX = self.velX + self.acceleration * dt
   end
 
